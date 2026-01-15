@@ -1,0 +1,37 @@
+hr {
+    display: none;
+}
+
+@font-face {
+    font-family: Recoleta Arial, Helvetica, sans-serif;
+    src: url('Recoleta-RegularDEMO.otf') format('.otf');
+}
+
+@font-face {
+    font-family: Relationship of monospace;
+    src: url("Relationship\ of\ mélodrame.ttf");
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 49px;
+    font-family: Relationship of monospace;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 23px;
+    top: 54vh;
+}
+
+h3, h4, p {
+    font-size: 20px;
+    position: relative;
+    font-family: Recoleta Arial, Helvetica, sans-serif;
+}
