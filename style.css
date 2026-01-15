@@ -25,9 +25,7 @@
 }
 
 body {
-    background-image: url('tenniscourt.jpeg');
-    background-size: cover;
-    background-position: center;
+    background-color: #192227;
     font-family: Recoleta Arial, Helvetica, sans-serif;
     min-height: 100vh;
 }
@@ -68,8 +66,7 @@ header {
 }
 
 .desktop-nav a:hover {
-    color: #d18b8be2;
-    text-decoration: underline;
+    color: #435F3B;
     font-size: 30px;
 }
 
@@ -95,10 +92,17 @@ input[type="search"] {
 button[type="submit"] {
     color: white;
     background-color: #003C64;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 0 4px 4px 0;
+    padding: 2px 2px;
+    height: 33px;
+    width: auto;
+    border: 1px solid #ccc;
     cursor: pointer;
+}
+
+button img {
+    width: 27px;
+    height: auto;
+    align-items: center;
 }
 
 button[type="submit"]:hover {
@@ -162,6 +166,9 @@ button[type="submit"]:hover {
 
 /* Hero Section */
 .hero {
+    background-image: url('tenniscourt.jpeg');
+    background-size: cover;
+    background-position: center;
     text-align: center;
     padding: 200px 20px;
 }
@@ -169,7 +176,7 @@ button[type="submit"]:hover {
 h1 {
     color: #fffffff3;
     font-family: Daisy Script, sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: 102px;
     margin-bottom: 15px;
 }
@@ -214,7 +221,7 @@ article h2, article h1 {
     color: #1a1a1a;
     margin-bottom: 1rem;
     line-height: 1.2;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 /* Conteúdo do artigo */
@@ -319,4 +326,26 @@ article h2, article h1 {
     .container > div {
         font-size: 1.1rem;
     }
+}
+
+/* Secao Nossos Valores */
+.values-section {
+  background-color: #003c64;
+  color: white;
+  text-align: center;
+  padding: 4px;
+  list-style-position: inside;
+}
+
+hr {
+  display: none;
+}
+
+.section-divider {
+  margin: 2rem 0;
+}
+
+.company-tag {
+  margin-top: 1rem;
+  font-style: italic;
 }
