@@ -173,6 +173,7 @@ button[type="submit"]:hover {
     padding: 200px 20px;
 }
 
+
 h1 {
     color: #fffffff3;
     font-family: Daisy Script, sans-serif;
@@ -188,154 +189,181 @@ h1 {
     text-shadow: 2px 2px 4px #102305;
 }
 
-/* Container principal dos artigos */
-aside {
+/* ========================================
+   SEÇÃO DO BLOG - Layout Principal
+   ======================================== */
+
+.blog-section {
     max-width: 1400px;
-    width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 60px 32px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    grid-template-rows: auto auto auto; /* Três linhas: título, imagem1, imagem2 */
+    gap: 30px 80px; /* gap vertical e horizontal */
+    align-items: start;
 }
 
-/* Cards de artigos */
-article {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
+/* ========================================
+   COLUNA ESQUERDA - Título e Imagem
+   ======================================== */
+
+.blog-left {
     display: flex;
     flex-direction: column;
-    min-height: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 20px;
 }
 
-article:hover {
+/* Título "Blog" grande e elegante */
+.blog-title {
+    grid-column: 1; /* Primeira coluna */
+    grid-row: 1; /* Primeira linha */
+    font-size: 152px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
+
+/* Imagem principal do blog */
+.blog-images {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.blog-images:hover {
     transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Título do artigo */
-article h2, article h1 {
-    font-family: Le Jour serif;
-    font-size: 35px;
+/* ========================================
+   COLUNA DIREITA - Articles empilhados
+   ======================================== */
+
+.blog-right {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço entre os articles */
+}
+
+/* ========================================
+   CARDS DOS ARTICLES
+   ======================================== */
+
+.blog-article {
+    background: rgba(255, 255, 255, 0.95);
+    width: 600px;
+    height: auto;
+    padding: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito hover elegante nos articles */
+.blog-article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   CONTEÚDO DO ARTICLE
+   ======================================== */
+
+/* Títulos dos articles */
+.blog-article h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
     color: #1a1a1a;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
-/* Conteúdo do artigo */
+/* Texto descritivo */
 .article-content {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: auto;
     flex-grow: 1;
+    margin-bottom: 24px;
 }
 
-/* Botão do artigo */
-.button {
+.article-content p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   BOTÃO "CONTINUE LENDO"
+   ======================================== */
+
+.blog-article a {
+    text-decoration: none;
     align-self: flex-start;
+}
+
+.article-button {
     background: transparent;
     color: #05352f;
-    border: 2px solid transparent;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
+    border: 2px solid #05352f;
+    padding: 12px 32px;
+    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 1px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
-.button:hover {
-    color: #012521ee;
-    border-color: #002f28;
-    background: rgba(33, 150, 243, 0.05);
+.article-button:hover {
+    color: #ffffff;
+    background: #05352f;
+    transform: translateX(5px);
 }
 
-/* Container flexível (caso seja necessário) */
-.container {
-    max-width: 1400px;
-    margin: 2rem auto;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    background-color: rgba(33, 150, 243, 0.1);
-    border-radius: 8px;
-}
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
 
-.container > div {
-    flex: 1 1 200px;
-    background-color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 1.25rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* ========== RESPONSIVIDADE ========== */
-
-/* Tablets */
-@media (max-width: 1024px) {
-    aside {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        padding: 2rem 1.5rem;
+@media (max-width: 1200px) {
+    .blog-section {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 40px;
     }
-
-    article {
-        min-height: 280px;
+    
+    .blog-title {
+        font-size: 80px;
+    }
+    
+    .blog-image {
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-    .desktop-nav {
-        display: none;
+    .blog-title {
+        font-size: 60px;
     }
-
-    aside {
-        grid-template-columns: 1fr;
-        padding: 2rem 1rem;
-        gap: 1.5rem;
+    
+    .blog-article {
+        padding: 30px;
     }
-
-    article {
-        min-height: auto;
-        padding: 1.5rem;
+    
+    .blog-article h3 {
+        font-size: 24px;
     }
-
-    article h2, article h1 {
-        font-size: 1.25rem;
-    }
-
-    .article-content {
-        font-size: 0.95rem;
-    }
-
-    .container {
-        flex-direction: column;
-        padding: 1.5rem;
-    }
-
-    .container > div {
-        font-size: 1.1rem;
-    }
-}
-
-/* Secao Nossos Valores */
-.values-section {
-  background-color: #003c647c;
-  color: white;
-  text-align: center;
-  padding: 4px;
-  list-style-position: inside;
 }
 
 hr {
@@ -351,6 +379,17 @@ hr {
     background-size: cover;
     max-width: 700vh;
    
+}
+
+
+.carousel-control.next:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-control.prev:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .section-divider {
@@ -399,13 +438,40 @@ hr {
 }
 
 .carousel-control.prev {
-  left: 10px;
+  left: 224px;
 }
 
 .carousel-control.next {
-  right: 10px;
+  right: 224px;
 }   
+
+/* ========================================
+   VALORES
+   ======================================== */
+
+.values-section {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #003c643e;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 200;
+    padding: 8px;
+}
+
+.values-left {
+    text-align: left;
+}
+
+p .values-right {
+    font-size: 16px;
+}
+
+.values-right {
+    text-align: right;
+    list-style-position: inside;
+}
 
 html {
     scroll-behavior: smooth;
 }
+
