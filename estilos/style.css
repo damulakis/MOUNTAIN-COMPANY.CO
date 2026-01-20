@@ -1,8 +1,20 @@
+/* ========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ======================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   FONTES
+   ======================================== */
 
 @font-face {
     font-family: Le Jour Serif;
@@ -24,11 +36,19 @@
     src: url("Relationship\ of\ mélodrame.ttf");
 }
 
+/* ========================================
+   BODY
+   ======================================== */
+
 body {
     background-color: #192227;
     font-family: Recoleta Arial, Helvetica, sans-serif;
     min-height: 100vh;
 }
+
+/* ========================================
+   HEADER
+   ======================================== */
 
 header {
     background-color: rgba(7, 34, 21, 0.229);
@@ -44,11 +64,13 @@ header {
     margin: 0 auto;
 }
 
+/* Logo */
 .logo {
     width: 198px;
     height: auto;
 }
 
+/* Navegação Desktop */
 .desktop-nav {
     display: flex;
     font-family: Recoleta Arial, Helvetica, sans-serif;
@@ -70,12 +92,14 @@ header {
     font-size: 30px;
 }
 
+/* Header Right (Search + Dropdown) */
 .header-right {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* Search Box */
 .search-box {
     display: flex;
     align-items: center;
@@ -109,7 +133,7 @@ button[type="submit"]:hover {
     background-color: #005580;
 }
 
-/* Dropdown Styles */
+/* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -164,15 +188,25 @@ button[type="submit"]:hover {
     display: block;
 }
 
-/* Hero Section */
+/* ========================================
+   MAIN - HERO SECTION
+   ======================================== */
+
 .hero {
-    background-image: url('tenniscourt.jpeg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 200px 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
+.hero-img {
+    background-size: contain;
+    background-position: left;
+}
+
+.hero-text {
+    display: block;
+    size: 33px;
+    margin-left: 30px;
+}
 
 h1 {
     color: #fffffff3;
@@ -190,7 +224,75 @@ h1 {
 }
 
 /* ========================================
-   SEÇÃO DO BLOG - Layout Principal
+   BANNER - CAROUSEL
+   ======================================== */
+
+.banner {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #5555552b;
+    background-size: cover;
+    max-width: 700vh;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 224px;
+}
+
+.carousel-control.next {
+    right: 224px;
+}
+
+.carousel-control.prev:hover {
+    transform: translateY(-18px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-control.next:hover {
+    transform: translateY(-18px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   ASIDE - SEÇÃO DO BLOG
    ======================================== */
 
 .blog-section {
@@ -198,26 +300,22 @@ h1 {
     margin: 0 auto;
     padding: 60px 32px;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
-    grid-template-rows: auto auto auto; /* Três linhas: título, imagem1, imagem2 */
-    gap: 30px 80px; /* gap vertical e horizontal */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 30px 80px;
     align-items: start;
 }
 
-/* ========================================
-   COLUNA ESQUERDA - Título e Imagem
-   ======================================== */
-
+/* Coluna Esquerda - Título e Imagens */
 .blog-left {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Título "Blog" grande e elegante */
 .blog-title {
-    grid-column: 1; /* Primeira coluna */
-    grid-row: 1; /* Primeira linha */
+    grid-column: 1;
+    grid-row: 1;
     font-size: 152px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #ffffff;
@@ -227,7 +325,6 @@ h1 {
     letter-spacing: -2px;
 }
 
-/* Imagem principal do blog */
 .blog-images {
     max-width: 100%;
     height: auto;
@@ -241,20 +338,13 @@ h1 {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* ========================================
-   COLUNA DIREITA - Articles empilhados
-   ======================================== */
-
+/* Coluna Direita - Articles */
 .blog-right {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Espaço entre os articles */
+    gap: 30px;
 }
-
-/* ========================================
-   CARDS DOS ARTICLES
-   ======================================== */
 
 .blog-article {
     background: rgba(255, 255, 255, 0.95);
@@ -269,17 +359,11 @@ h1 {
     flex-direction: column;
 }
 
-/* Efeito hover elegante nos articles */
 .blog-article:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* ========================================
-   CONTEÚDO DO ARTICLE
-   ======================================== */
-
-/* Títulos dos articles */
 .blog-article h3 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 28px;
@@ -290,7 +374,6 @@ h1 {
     font-weight: 500;
 }
 
-/* Texto descritivo */
 .article-content {
     flex-grow: 1;
     margin-bottom: 24px;
@@ -302,10 +385,6 @@ h1 {
     line-height: 1.7;
     margin: 0;
 }
-
-/* ========================================
-   BOTÃO "CONTINUE LENDO"
-   ======================================== */
 
 .blog-article a {
     text-decoration: none;
@@ -333,12 +412,60 @@ h1 {
 }
 
 /* ========================================
+   SECTION - VALORES
+   ======================================== */
+
+.values-section {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #003c643e;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 200;
+    padding: 8px;
+}
+
+.values-left {
+    text-indent: 50px;
+    text-align: left;
+    margin-bottom: 35px;
+    font-size: 22px;
+}
+
+.values-right {
+    text-align: right;
+    list-style-position: inside;
+    margin: 10px;
+    font-size: 18px;
+}
+
+p .values-right {
+    font-size: 16px;
+}
+
+.company-tag {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* ========================================
+   ELEMENTOS DIVERSOS
+   ======================================== */
+
+hr {
+    display: none;
+}
+
+.section-divider {
+    margin: 2rem 0;
+}
+
+/* ========================================
    RESPONSIVIDADE
    ======================================== */
 
 @media (max-width: 1200px) {
     .blog-section {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-columns: 1fr;
         gap: 40px;
     }
     
@@ -365,113 +492,3 @@ h1 {
         font-size: 24px;
     }
 }
-
-hr {
-  display: none;
-}
-
-.banner {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #5555552b;
-    background-size: cover;
-    max-width: 700vh;
-   
-}
-
-
-.carousel-control.next:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-control.prev:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.section-divider {
-  margin: 2rem 0;
-}
-
-.company-tag {
-  margin-top: 1rem;
-  font-style: italic;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  text-align: center;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  min-width: 100%;
-  display: none;
-}
-
-.carousel-item.active {
-  display: block;
-}
-
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 24px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.carousel-control.prev {
-  left: 224px;
-}
-
-.carousel-control.next {
-  right: 224px;
-}   
-
-/* ========================================
-   VALORES
-   ======================================== */
-
-.values-section {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #003c643e;
-    color: #ffffff;
-    margin: 0;
-    font-weight: 200;
-    padding: 8px;
-}
-
-.values-left {
-    text-align: left;
-}
-
-p .values-right {
-    font-size: 16px;
-}
-
-.values-right {
-    text-align: right;
-    list-style-position: inside;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-

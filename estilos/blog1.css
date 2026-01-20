@@ -56,9 +56,9 @@ h3, h4,p {
     }
 
 .divider {
-      width: 20vw;
+      width: 38vw;
       height: 3px;
-      background: linear-gradient(80deg, transparent, #003c64, transparent);
+      background: linear-gradient(78deg, transparent, #9dcded, transparent);
       margin: 4rem auto;
     }
 
@@ -69,7 +69,6 @@ img {
 }
 
 section {
-    background-color: #51595ba9;
     font-size: 38px;
     border-radius: 10px;
     border-color: black;
@@ -77,8 +76,8 @@ section {
 }
 
 footer {
-    background-color: #1e292fb3;
     font-size: 19px;
+    margin-top: 25px;
     border-radius: 10px;
     display: block;
     text-align: center;
@@ -88,17 +87,19 @@ footer {
 .cta-button {
       display: block;
       margin-top: 14px;
-      padding: 2px;
+      padding: 2px 2px;
       text-decoration: none;
       background-color: #435f3b;
       color: white;
       border-radius: 20px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-weight: 600;
+      font-weight: 400;
       transition: all 0.3s ease;
+      border-radius: 15px;
+      size: 40px;
     }
 
     .cta-button:hover {
       transform: translateY(-3px);
-      color: #003c64;
+      color: #b3cee0;
     }
