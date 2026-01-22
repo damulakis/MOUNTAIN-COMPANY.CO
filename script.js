@@ -1,15 +1,18 @@
-// Toggle dropdown menu visibility
+// ========================================
+// DROPDOWN MENU
+// ========================================
+
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if user clicks outside of it
+// Fecha dropdown ao clicar fora
 window.onclick = function(event) {
   if (!event.target.closest('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+    const dropdowns = document.getElementsByClassName("dropdown-content");
     
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
       
       if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
@@ -18,17 +21,54 @@ window.onclick = function(event) {
   }
 }
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-item');
-const totalSlides = slides.length;
+// ========================================
+// CAROUSEL DE PRODUTOS
+// ========================================
+
+let produtosSlide = 0;
+const produtosSlides = document.querySelectorAll('.carousel-item');
+const totalProdutosSlides = produtosSlides.length;
 
 function showSlide(index) {
-  slides.forEach((slide, i) => {
+  produtosSlides.forEach((slide, i) => {
     slide.classList.toggle('active', i === index);
   });
 }
 
 function moveSlide(direction) {
-  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-  showSlide(currentSlide);
-}   
+  if (totalProdutosSlides === 0) return;
+  
+  produtosSlide = (produtosSlide + direction + totalProdutosSlides) % totalProdutosSlides;
+  showSlide(produtosSlide);
+}
+
+// ========================================
+// CAROUSEL DE VALORES
+// ========================================
+
+let valoresSlide = 0;
+const valoresSlides = document.querySelectorAll('.valores-slide');
+const totalValoresSlides = valoresSlides.length;
+
+function moveValoresSlide(direction) {
+  if (totalValoresSlides === 0) return;
+  
+  valoresSlides[valoresSlide].classList.remove('active');
+  
+  valoresSlide += direction;
+  
+  if (valoresSlide >= totalValoresSlides) {
+    valoresSlide = 0;
+  } else if (valoresSlide < 0) {
+    valoresSlide = totalValoresSlides - 1;
+  }
+  
+  valoresSlides[valoresSlide].classList.add('active');
+}
+
+// Auto-play do carousel de valores (5 segundos)
+if (totalValoresSlides > 0) {
+  setInterval(() => {
+    moveValoresSlide(1);
+  }, 5000);
+}
