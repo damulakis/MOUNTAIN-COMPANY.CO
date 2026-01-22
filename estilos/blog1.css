@@ -1,105 +1,162 @@
-hr {
-    display: none;
-}
-
-@font-face {
+/* Fontes customizadas */
+     @font-face {
     font-family: Recoleta Arial, Helvetica, sans-serif;
     src: url('Recoleta-RegularDEMO.otf') format('.otf');
 }
 
-@font-face {
+     @font-face {
     font-family: Relationship of monospace;
     src: url("Relationship\ of\ mélodrame.ttf");
 }
+        /* Reset e configurações gerais */
+        body {
+            background-color: #192227;
+            color: rgba(255, 255, 255, 0.857);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+            font-family: 'Recoleta', Arial, Helvetica, sans-serif;
+        }
 
-body {
-    background-color: #192227;
-    color: rgba(255, 255, 255, 0.857);
-    display: block;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    line-height: 1.6;
-}
+        /* Tipografia */
+        h1 {
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 2px;
+        }
 
-h1 {
-    font-size: 49px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    letter-spacing: 2px;
-}
+        h2 {
+            font-size: 30px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
 
-h2 {
-    font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    top: 54vh;
-}
+        h2:hover { 
+            transform: translateY(-5px);
+            color: #6e808d;
+        }
 
-h3, h4,p {
-    font-size: 20px;
-    position: relative;
-    font-family: Recoleta Arial, Helvetica, sans-serif;
-}
+        h3, p {
+            font-size: 20px;
+            font-family: 'Recoleta', Arial, Helvetica, sans-serif;
+        }
 
-.article-header {
-      text-align: center;
-      margin-bottom: 4rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        h3:hover { 
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        }
 
-.article-meta {
-      font-size: 0.9rem;
-      text-align: center;
-      color: #8b95a1;
-      font-style: italic;
-      margin-top: 1rem;
-    }
+        /* Sistema de Toggle */
+        .toggle-title {
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
 
-.divider {
-      width: 38vw;
-      height: 3px;
-      background: linear-gradient(78deg, transparent, #9dcded, transparent);
-      margin: 4rem auto;
-    }
+        .toggle-title:hover {
+            background-color: #2e4623;
+        }
 
-img {
-    width: 780px;
-    max-width: 1080px;
-    height: auto;
-}
+        .toggle-content {
+            display: none;
+            padding: 15px;
+            border-radius: 0 0 8px 8px;
+            margin-top: 2px;
+        }
 
-section {
-    font-size: 38px;
-    border-radius: 10px;
-    border-color: black;
-    padding: 60px;
-}
+        .toggle-content.active {
+            display: block;
+        }
 
-footer {
-    font-size: 19px;
-    margin-top: 25px;
-    border-radius: 10px;
-    display: block;
-    text-align: center;
-    padding: 20px;
-}
+        /* Elementos visuais */
+        hr {
+            display: none;
+        }
 
-.cta-button {
-      display: block;
-      margin-top: 14px;
-      padding: 2px 2px;
-      text-decoration: none;
-      background-color: #435f3b;
-      color: white;
-      border-radius: 20px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-weight: 400;
-      transition: all 0.3s ease;
-      border-radius: 15px;
-      size: 40px;
-    }
+        .divider {
+            width: 38vw;
+            height: 3px;
+            background: linear-gradient(78deg, transparent, #9dcded, transparent);
+            margin: 4rem auto;
+        }
 
-    .cta-button:hover {
-      transform: translateY(-3px);
-      color: #b3cee0;
-    }
+        /* Listas */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Imagens */
+        img {
+            width: 100%;
+            max-width: 780px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Cabeçalho do artigo */
+        .article-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #8b95a1;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Seções especiais */
+        section {
+            font-size: 38px;
+            border-radius: 10px;
+            padding: 60px;
+            margin: 30px 0;
+        }
+
+        q {
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            font-size: 19px;
+            margin-top: 25px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Botão CTA */
+        .cta-button {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 12px 24px;
+            text-decoration: none;
+            background-color: #435f3b;
+            color: white;
+            border-radius: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            color: #b3cee0;
+        }
