@@ -70,6 +70,7 @@ header {
     height: auto;
 }
 
+
 /* Navegação Desktop */
 .desktop-nav {
     display: flex;
@@ -411,7 +412,7 @@ h1 {
 }
 
 /* ========================================
-   SECTION - VALORES
+   SECTION - INFO
    ======================================== */
 
 .info-section {
@@ -450,48 +451,3 @@ ul {
 }
 
 
-/* ========================================
-   ELEMENTOS DIVERSOS
-   ======================================== */
-
-hr {
-    display: none;
-}
-
-.section-divider {
-    margin: 2rem 0;
-}
-
-/* ========================================
-   RESPONSIVIDADE
-   ======================================== */
-
-@media (max-width: 1200px) {
-    .blog-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .blog-title {
-        font-size: 80px;
-    }
-
-    .blog-image {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .blog-title {
-        font-size: 60px;
-    }
-
-    .blog-article {
-        padding: 30px;
-    }
-
-    .blog-article h3 {
-        font-size: 24px;
-    }
-}
