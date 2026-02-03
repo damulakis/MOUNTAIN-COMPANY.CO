@@ -198,8 +198,8 @@ button[type="submit"]:hover {
 }
 
 .hero-img {
-    background-size: contain;
-    background-position: left;
+    background-position: center;
+    margin-bottom: 0;
 }
 
 .hero-text {
@@ -228,11 +228,10 @@ h1 {
    ======================================== */
 
 .banner {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-top: 80px;
     padding-bottom: 30px;
-    background-color: #5555552b;
     background-size: cover;
     max-width: 700vh;
 }
@@ -415,155 +414,41 @@ h1 {
    SECTION - VALORES
    ======================================== */
 
-.values-section {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #003c643e;
-    color: #ffffff;
-    margin: 0;
-    font-weight: 200;
-    padding: 8px;
+.info-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 32px 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 30px 80px;
+    align-items: start;
+    color: #e0e0e0;
 }
 
+.sobre-title {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 152px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
 
 ul {
     list-style: none;
     margin: 30px 0;
 }
 
-.banner {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .valores-carousel {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .valores-carousel-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .valores-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
-
-        .valores-slide.active {
-            opacity: 1;
-        }
-
-        .valores-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .content-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .content-box {
-            max-width: 800px;
-            color: #fff;
-            text-align: center;
-        }
-
-        .content-box h1,
-        .content-box h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            letter-spacing: 4px;
-            font-weight: 300;
-        }
-
-        .content-box p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .content-box ul {
-            list-style: none;
-            font-size: 1.2rem;
-            line-height: 2;
-        }
-
-        .content-box ul li::before {
-            content: "✦ ";
-            color: #d4af37;
-        }
-
-        .contact-content {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .contact-column {
-            flex: 1;
-        }
-
-        .contact-icon {
-            margin-right: 10px;
-        }
-
-        .tagline {
-            font-style: italic;
-            color: #d4af37;
-            margin-top: 30px;
-        }
-
-        .valores-carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid #fff;
-            color: #fff;
-            font-size: 2rem;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .valores-carousel-control:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        .valores-carousel-control.prev {
-            left: 20px;
-        }
-
-        .valores-carousel-control.next {
-            right: 20px;
-        }
-
-
-.company-tag {
-    margin-top: 1rem;
+.tagline {
     font-style: italic;
+    color: #d4af37;
+    margin-top: 30px;
 }
+
 
 /* ========================================
    ELEMENTOS DIVERSOS
